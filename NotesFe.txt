@@ -1,0 +1,27 @@
+css and js and google fonts in bootstrap in html.
+reusable components in components folder .
+routes in pages folder.
+layout in components to keep header and footer same when we go on any page in app wrap app.js file in layout.
+props in layout.js helps in showing everything wrapped inside layout component in appjs.
+wrap browser router in index.js and router and routes in app.js for dynamic routing.
+create pages in page folder add layout in pages and give element in app.js so header and footer keeps being same.
+navbar through bootstrap in header can conver html to jsx by right clicking mouse done thorugh extension import link & navlink and use with-
+to in place of anchor tag and href and edit the things you need and change mb class to ms in navbar class to push items on left side and style through indexcss used link once in header-
+cause we applied styling on navlink classes and it was affecting the name of app as well.
+used icons through importing react icons thn adding first 2 letters of icon in the end of import syntax works as a library or add it by emoji extension.
+added links in footer about,contact,privacy by link and to.
+added pagenot found with styling in pagenotfound component in layout so header and footer keeps being same and added links in footer with styling & content and react icons.
+to apply seo so title gets change when we go to specific page install react-helmet will use in layout file cause we're wrapping every page in layout-
+import helmet and enter the helmet code destructure things you want and add meta tags accordingly and give it in content as {} 
+and add default in layout file incase we donot have any specific data for page add specific title or description from the files in pages folder.
+create auth folder thn login and register pages add form from bootstrap and html to jsx wrap with layout so footer and header keeps the same and add title for seo & create route component in app.js-
+style in index.css by form classnames edit and add input fields acc to your inputs create states to hold the values which gets enter in form create getter and setter states-
+create value property in input detail getter state will get bind thn onchange event to set the value so this event will set the user input value in 'for eg-"name"' property-
+add handlesubmit event in form and add require property for client side validation and to stop page getting refresh while submitting create handle function and call prevent default-
+to send the data getting in user input we use axios install it and for notification install toast and require toaster in layout add the function now keep requiring the toast module in page you want to send msg through-
+add the styles in login and signup by authstyles.css in styles folder.
+when user gets loggedin we need to hide login and register page for that we will use context api will manage global-state(one state to pass in multiple components) to get the state create auth file in context folder-
+
+
+need to create notes from vid 12 created code till vid 23 of techinfo yt ecommerce playlist
+
