@@ -10,7 +10,9 @@ export default function PrivateRoute() {
 
   useEffect(() => {
     const authCheck = async () => {
-      const res = await axios.get("http://localhost:8000/api/user-auth");
+      const res = await axios.get(
+        "https://e-commbackend.onrender.com/api/user-auth"
+      );
       if (res.data.ok) {
         setOk(true);
       } else {

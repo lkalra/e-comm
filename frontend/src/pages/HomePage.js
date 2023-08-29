@@ -22,7 +22,7 @@ const HomePage = () => {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8000/api/get-categories"
+        "https://e-commbackend.onrender.com/api/get-categories"
       );
       if (data?.success) {
         setCategories(data?.category);
@@ -41,7 +41,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:8000/api/product-list/${page}`
+        `https://e-commbackend.onrender.com/api/product-list/${page}`
       );
       setLoading(false);
       setProducts(data.products);
@@ -55,7 +55,7 @@ const HomePage = () => {
   const getTotal = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8000/api/product-count"
+        "https://e-commbackend.onrender.com/api/product-count"
       );
       setTotal(data?.total);
     } catch (error) {
@@ -73,7 +73,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:8000/api/product-list/${page}`
+        `https://e-commbackend.onrender.com/api/product-list/${page}`
       );
       setLoading(false);
       setProducts([...products, ...data?.products]);
@@ -107,7 +107,7 @@ const HomePage = () => {
   const filterProduct = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/product-filters",
+        "https://e-commbackend.onrender.com/api/product-filters",
         {
           checked,
           radio,
@@ -166,7 +166,7 @@ const HomePage = () => {
             {products?.map((p) => (
               <div className="card m-2" key={p._id}>
                 <img
-                  src={`http://localhost:8000/api/get-photo/${p._id}`}
+                  src={`https://e-commbackend.onrender.com/api/get-photo/${p._id}`}
                   className="card-img-top"
                   style={{ width: "18rem", height: "15rem" }}
                   alt={p.name}
@@ -230,4 +230,4 @@ const HomePage = () => {
 
 export default HomePage;
 
-// http://localhost:8000/api/get-photo/${p._id}
+// https://e-commbackend.onrender.com/api/get-photo/${p._id}

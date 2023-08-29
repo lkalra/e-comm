@@ -16,7 +16,7 @@ const CategoryProduct = () => {
   const getPrductsByCat = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/product-category/${params.slug}`
+        `https://e-commbackend.onrender.com/api/product-category/${params.slug}`
       );
       setProducts(data?.products);
       setCategory(data?.category);
@@ -40,7 +40,7 @@ const CategoryProduct = () => {
     //               key={p._id}
     //             >
     //               <img
-    //                 src={`http://localhost:8000/api/get-photo/${p._id}`}
+    //                 src={`https://e-commbackend.onrender.com/api/get-photo/${p._id}`}
     //                 className="card-img-top"
     //                 alt={p.name}
     //               />
@@ -91,7 +91,7 @@ const CategoryProduct = () => {
               {products?.map((p) => (
                 <div className="card m-2" key={p._id}>
                   <img
-                    src={`http://localhost:8000/api/get-photo/${p._id}`}
+                    src={`https://e-commbackend.onrender.com/api/get-photo/${p._id}`}
                     className="card-img-top"
                     alt={p.name}
                   />

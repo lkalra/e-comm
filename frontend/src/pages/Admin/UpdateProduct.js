@@ -24,7 +24,7 @@ const UpdateProduct = () => {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/get-product/${params.slug}`
+        `https://e-commbackend.onrender.com/api/get-product/${params.slug}`
       );
       setName(data.product.name);
       setId(data.product._id);
@@ -46,7 +46,7 @@ const UpdateProduct = () => {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8000/api/get-categories"
+        "https://e-commbackend.onrender.com/api/get-categories"
       );
       if (data?.success) {
         setCategories(data?.category);
@@ -73,7 +73,7 @@ const UpdateProduct = () => {
       photo && productData.append("photo", photo);
       productData.append("category", category);
       const { data } = axios.put(
-        `http://localhost:8000/api/update-product/${id}`,
+        `https://e-commbackend.onrender.com/api/update-product/${id}`,
         productData
       );
       if (data?.success) {
@@ -95,7 +95,7 @@ const UpdateProduct = () => {
       if (!answer) return;
       // eslint-disable-next-line
       const { data } = await axios.delete(
-        `http://localhost:8000/api/delete-product/${id}`
+        `https://e-commbackend.onrender.com/api/delete-product/${id}`
       );
       toast.success("Product DEleted Succfully");
       navigate("/dashboard/admin/products");
@@ -156,7 +156,7 @@ const UpdateProduct = () => {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`http://localhost:8000/api/get-photo/${id}`}
+                      src={`https://e-commbackend.onrender.com/api/get-photo/${id}`}
                       alt="product_photo"
                       height={"200px"}
                       className="img img-responsive"

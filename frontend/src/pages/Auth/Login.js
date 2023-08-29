@@ -17,10 +17,13 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8000/api/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://e-commbackend.onrender.com/api/login",
+        {
+          email,
+          password,
+        }
+      );
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
         setAuth({

@@ -16,7 +16,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/create-category",
+        "https://e-commbackend.onrender.com/api/create-category",
         {
           name,
         }
@@ -37,7 +37,7 @@ const CreateCategory = () => {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8000/api/get-categories"
+        "https://e-commbackend.onrender.com/api/get-categories"
       );
       if (data.success) {
         setCategories(data.category);
@@ -57,7 +57,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `http://localhost:8000/api/update-category/${selected._id}`,
+        `https://e-commbackend.onrender.com/api/update-category/${selected._id}`,
         { name: updatedName }
       );
       if (data.success) {
@@ -77,7 +77,7 @@ const CreateCategory = () => {
   const handleDelete = async (pId) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:8000/api/delete-category/${pId}`
+        `https://e-commbackend.onrender.com/api/delete-category/${pId}`
       );
       if (data.success) {
         toast.success(`category is deleted`);
