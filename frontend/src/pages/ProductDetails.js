@@ -37,9 +37,10 @@ const ProductDetails = () => {
       console.log(error);
     }
   };
+
   return (
     <Layout>
-      <div className="row container product-details">
+      <div className="row container mt-2">
         <div className="col-md-6">
           <img
             src={`https://e-commbackend.onrender.com/api/get-photo/${product._id}`}
@@ -49,7 +50,7 @@ const ProductDetails = () => {
             width={"350px"}
           />
         </div>
-        <div className="col-md-6 product-details-info">
+        <div className="col-md-6 ">
           <h1 className="text-center">Product Details</h1>
           <h6>Name : {product.name}</h6>
           <h6>Description : {product.description}</h6>
@@ -59,7 +60,7 @@ const ProductDetails = () => {
         </div>
       </div>
       <hr />
-      <div className="row container similar-products">
+      <div className="row container">
         <h6>Similar Products</h6>
         {relatedProducts.length < 1 && (
           <p className="text-center">No Similar Products found</p>
@@ -73,39 +74,16 @@ const ProductDetails = () => {
                 alt={p.name}
               />
               <div className="card-body">
-                <div className="card-name-price">
-                  <h5 className="card-title">{p.name}</h5>
-                  <h5 className="card-title card-price">
-                    {p.price.toLocaleString("en-US", {
-                      style: "currency",
-                      currency: "USD",
-                    })}
-                  </h5>
-                </div>
-                <p className="card-text ">
-                  {p.description.substring(0, 60)}...
-                </p>
-                <div className="card-name-price">
-                  <button
-                    className="btn btn-info ms-1"
-                    onClick={() => navigate(`/product/${p.slug}`)}
-                  >
-                    More Details
-                  </button>
-                  {/* <button
-                  className="btn btn-dark ms-1"
-                  onClick={() => {
-                    setCart([...cart, p]);
-                    localStorage.setItem(
-                      "cart",
-                      JSON.stringify([...cart, p])
-                    );
-                    toast.success("Item Added to cart");
-                  }}
+                <h5 className="card-title">{p.name}</h5>
+                <p className="card-text">{p.description.substring(0, 30)}...</p>
+                <p className="card-text"> $ {p.price}</p>
+                <button
+                  className="btn btn-primary ms-1"
+                  onClick={() => navigate(`/product/${p.slug}`)}
                 >
-                  ADD TO CART
-                </button> */}
-                </div>
+                  More Details
+                </button>
+                <button class="btn btn-secondary ms-1">ADD TO CART</button>
               </div>
             </div>
           ))}
